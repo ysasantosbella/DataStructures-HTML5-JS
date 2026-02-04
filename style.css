@@ -24,4 +24,69 @@ footer{
     color: white;
 }
 
+/* Base Menu Links*/
+nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: nowrap;
+} 
 
+.menu-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f6;
+    padding: 5px 12px;
+    margin: 10px 4px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1c2120;
+    min-width: 90px;
+    white-space: nowrap;
+    hyphens: none;
+    box-sizing: border-box;
+    transition: 
+        background-color 0.3s ease,
+        transform 0.2s ease,
+        color 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-btn * {
+    cursor: pointer;
+}
+
+/* Menu Hover */
+.menu-btn:hover {
+    background-color: #f0e6ff;
+    color: #6b3fcf;
+    transform: translateY(-3px) scale(1.02);
+}
+
+
+/* Header Table Styling */
+.header-table {
+    width: 100%;
+    display: flex;            
+    align-items: center;        
+    justify-content: flex-start;
+    gap: 15px;                 
+    padding: 10px 0;
+    padding-left: 30px;
+}
+
+/* Header Icon Styling */
+.header-icon {
+    width: 48px;                
+    height: auto;
+    object-fit: contain;
+}
+
+.header-table h1 {
+    font-size: 30px;             
+    margin: 0;            
+    color: #ffffff;              
+}
