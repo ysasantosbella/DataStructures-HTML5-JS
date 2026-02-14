@@ -402,3 +402,129 @@ a {
     background: #020202;
     transform: translateY(-3px);
 }
+
+
+/* ============================= */
+/* DARK MODE (PASTEL THEME) */
+/* ============================= */
+
+body.dark-mode {
+    background: #000000;
+    color: #f3eaff;
+}
+
+/* Headers keep gradient but darker pastel */
+body.dark-mode .home-header {
+    background: #5e3f8f;
+}
+
+body.dark-mode .linear-header {
+    background: #9c3b63;
+}
+
+body.dark-mode .nonlinear-header {
+    background: #355fa8;
+}
+
+/* Header text */
+body.dark-mode header h1,
+body.dark-mode header p,
+body.dark-mode h2 {
+    color: #f8f0ff;
+}
+
+/* Cards */
+body.dark-mode .datastructure {
+    background-color: #2a2238; /* deep pastel purple */
+}
+
+body.dark-mode .datastructure.linear {
+    background-color: #502b3d; /* deep pastel pink */
+}
+
+body.dark-mode .datastructure.nonlinear {
+    background-color: #1f2d47; /* deep pastel blue */
+}
+
+/* Menu */
+body.dark-mode .menu-link {
+    background-color: #2a2238;
+    color: #f3eaff;
+}
+
+body.dark-mode .menu-link:hover {
+    background-color: #3a2a55;
+    color: #d5b8ff;
+}
+
+/* Table */
+body.dark-mode .datastructure-table {
+    background-color: #2a2238;
+}
+
+body.dark-mode .datastructure-table th {
+    background-color: #7d5fa6;
+}
+
+body.dark-mode .datastructure-table td {
+    border-bottom: 1px solid #4a3b66;
+}
+
+/* Search Input */
+body.dark-mode #searchInput {
+    background-color: #2f2938;
+    color: #f3eaff;
+    border: 1px solid #5d5d5e;
+}
+
+/* Signed Declaration */
+body.dark-mode .signedDeclaration {
+    background-color: #444242;
+    color: #ffffff;
+}
+
+/* Back To Top */
+body.dark-mode #toTop {
+    background: #87868a;
+}
+
+body.dark-mode #toTop:hover {
+    background: #171718;
+}
+
+body.dark-mode .dark-toggle {
+    font-family: 'Lexend', sans-serif;
+    background: #322e36;
+    color: white;
+    border-radius: 40px;
+    padding: 8px 18px;
+    margin-left: auto;      /* THIS pushes it right */
+    margin-right: 30px;     /* spacing from edge */
+}
+
+body.dark-mode .dark-toggle:hover {
+    font-family: 'Lexend', sans-serif;
+    background: #494650;
+    border-radius: 40px;
+}
+
+/* Base toggle (light) - applies when not in dark-mode */
+.dark-toggle {
+    border-radius: 40px;
+    padding: 8px 14px;
+    background: #ffffff;
+    color: #1c2120;
+    border: 1px solid rgba(0,0,0,0.08);
+    cursor: pointer;
+    font-family: 'Lexend', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease, transform 0.12s ease;
+}
+
+.dark-toggle:hover {
+    transform: translateY(-2px);
+}
+
+

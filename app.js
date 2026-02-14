@@ -1,4 +1,9 @@
 (function () {
+
+  /* ============================= */
+  /* SEARCH FEATURE */
+  /* ============================= */
+
   function searchFeature() {
     var input = document.getElementById("searchInput");
     if (!input) return;
@@ -16,36 +21,103 @@
       }
     });
   }
-  
-  function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }
 
-  const toTop = document.getElementById("toTop");
+  /* ============================= */
+  /* BACK TO TOP */
+  /* ============================= */
 
-  if (toTop) {
+  function scrollToTopFeature() {
+    const toTop = document.getElementById("toTop");
+    if (!toTop) return;
 
-    // Show button when scrolling down
     window.addEventListener("scroll", function () {
-      if (window.scrollY > 300) {
-        toTop.style.display = "block";
-      } else {
-        toTop.style.display = "none";
-      }
+      toTop.style.display = window.scrollY > 300 ? "block" : "none";
     });
 
-    // Attach click event
-    toTop.addEventListener("click", scrollToTop);
+    toTop.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
   }
+
+  /* ============================= */
+  /* DARK MODE FEATURE             */
+  /* ============================= */
+
+  function applyDarkMode(enabled) {
+    if (enabled === true) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+
+    var darkBtn = document.getElementById("darkToggle");
+    var lightBtn = document.getElementById("lightToggle");
+
+    if (darkBtn) {
+      darkBtn.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+      darkBtn.textContent = 'Dark Mode';
+    }
+
+    if (lightBtn) {
+      lightBtn.setAttribute('aria-pressed', enabled ? 'false' : 'true');
+      lightBtn.textContent = 'Light Mode';
+    }
+  }
+
+  function initDarkMode() {
+
+    var storedValue = localStorage.getItem("darkMode");
+    var enabled = false;
+
+    if (storedValue === "on") {
+      enabled = true;
+    } else {
+      enabled = false;
+    }
+
+    applyDarkMode(enabled);
+
+    var darkBtn = document.getElementById("darkToggle");
+    var lightBtn = document.getElementById("lightToggle");
+
+    if (darkBtn) {
+      darkBtn.addEventListener("click", function () {
+        localStorage.setItem("darkMode", "on");
+        applyDarkMode(true);
+      });
+    }
+
+    if (lightBtn) {
+      lightBtn.addEventListener("click", function () {
+        localStorage.setItem("darkMode", "off");
+        applyDarkMode(false);
+      });
+    }
+
+    /* Sync across iframes/windows */
+    window.addEventListener("storage", function (event) {
+
+      if (event.key === "darkMode") {
+
+        if (event.newValue === "on") {
+          applyDarkMode(true);
+        } else {
+          applyDarkMode(false);
+        }
+
+      }
+
+    });
+  }
+
 
   document.addEventListener("DOMContentLoaded", function () {
     searchFeature();
-    scrollToTop();
+    scrollToTopFeature();
+    initDarkMode();
   });
+
 })();
-
-
-// https://www.w3docs.com/snippets/javascript/how-to-scroll-to-the-top-of-the-page-using-javascript.html
