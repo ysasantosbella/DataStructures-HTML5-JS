@@ -1,34 +1,51 @@
-// CHANGE DISPLAYED PAGE 
-function changePage(newPage) {
-    const displayPage = document.getElementById('main-content-display');
+(function () {
+  function searchFeature() {
+    var input = document.getElementById("searchInput");
+    if (!input) return;
 
-    if (newPage === 'home') {
-        displayPage.innerHTML = 
-        '<h1>Home</h1><p>Data structures are specialized formats for storing data.</p>'; // todo: add more text here 
-    } else if (newPage === 'linear') {
-        displayPage.innerHTML = 
-        '<h1>Linear Data Structures</h1><p>Examples include arrays, linked lists, stacks, and queues.</p>'; // todo: add more text here 
-    } else if (newPage === 'nonlinear') {
-        displayPage.innerHTML = 
-        '<h1>Non-Linear Data Structures</h1><p>Examples include trees and graphs.</p>'; // todo: add more text here 
-    }
-}
+    var cards = document.querySelectorAll("[data-keywords]");
 
-// SEARCH BUTTON FUNCTIONALITY
-function handleSearch() {
-    const input = document.getElementById('search-input').value.toLowerCase();
-    const result = document.getElementById('search-results');
+    input.addEventListener("input", function () {
+      var q = (input.value || "").trim().toLowerCase();
+      for (var i = 0; i < cards.length; i++) {
+        var card = cards[i];
+        var kw = (card.getAttribute("data-keywords") || "").toLowerCase();
+        var text = (card.textContent || "").toLowerCase();
+        var show = !q || kw.indexOf(q) !== -1 || text.indexOf(q) !== -1;
+        card.style.display = show ? "" : "none";
+      }
+    });
+  }
+  
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
 
-    if (input.includes("stack") || input.includes("array") || input.includes("queue")) {
-        result.innerText = "Found in: Linear Data Structures Section";
-        result.style.color = "blue";
-    } else if (input.includes("tree") || input.includes("graph")) {
-        result.innerText = "Found in: Non-Linear Data Structures Section";
-        result.style.color = "green";
-    } else {
-        result.innerText = "No matches found for: " + input.toUpperCase();
-        result.style.color = "red";
-    }
-}
+  const toTop = document.getElementById("toTop");
 
-document.getElementById('search-btn').addEventListener('click', handleSearch);
+  if (toTop) {
+
+    // Show button when scrolling down
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 300) {
+        toTop.style.display = "block";
+      } else {
+        toTop.style.display = "none";
+      }
+    });
+
+    // Attach click event
+    toTop.addEventListener("click", scrollToTop);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    searchFeature();
+    scrollToTop();
+  });
+})();
+
+
+// https://www.w3docs.com/snippets/javascript/how-to-scroll-to-the-top-of-the-page-using-javascript.html
