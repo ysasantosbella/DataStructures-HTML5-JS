@@ -1,51 +1,33 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Data Structure Map</title>
+    <title>Data Structures</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="main-layout">
 
-    <div class="navigation-wrapper">
-    <header class="header-table">
-        <img src="assets/logo.png" alt="Data Structure Icon" class="header-icon">
-        <h1>Map to Data Structures</h1>
-    </header>
-
-    <nav>
-        <button class="menu-btn" onclick="changePage('home')">Home</button>
-        <button class="menu-btn" onclick="changePage('linear')">Linear</button>
-        <button class="menu-btn" onclick="changePage('nonlinear')">Non-Linear</button>
-    </nav>
+    <!-- 35% Header -->
+    <div class="header-section">
+        <iframe src="header.html" scrolling="no"></iframe>
     </div>
 
-    <main id="main-content">
-        <section id = "main-content-display">
-            <article> <!-- MAIN CONTENT SECTION -->
-                <h1>Welcome to the Map of Data Structures</h1> <!-- todo: add more information -->
-            </article>
-        </section>
+    <!-- 65% Bottom -->
+    <div class="bottom-section">
 
-        <section id = "search-section"> <!-- SEARCH KEYWORD SECTION -->
-            <p>Search for a keyword: </p>
-            <input type="text" id="search-input" placeholder="Enter keyword">
-            <button id="search-btn">Search</button>
-            <p id="search-results"></p>
-        </section>
-        
-    </main>
+        <!-- 25% Left -->
+        <div class="menu-section">
+            <iframe src="menu.html" scrolling="no"> </iframe>
+        </div>
 
-    <footer>
+        <!-- 75% Right -->
+        <div class="content-section">
+            <iframe src="home.html" name="winmain"></iframe>
+        </div>
 
-        <h5>Group 4: Batiller, Reantaso, Santos, and Senario</h5>
-    </footer>
+    </div>
 
-    <script src="app.js"></script> <!-- javasript file -->
 
 </body>
 </html>
-
