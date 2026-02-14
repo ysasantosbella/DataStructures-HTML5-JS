@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* ============================= */
+/* MAIN INDEX LAYOUT (HTML5) */
+/* ============================= */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Vertical 35% / 65% split */
+.main-layout {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header = 35% */
+.header-section {
+    height: 25vh;
+}
+
+/* Bottom = 65% */
+.bottom-section {
+    height: 65vh;
+    display: flex;
+}
+
+/* Left = 25% */
+.menu-section {
+    width: 25%;
+}
+
+/* Right = 75% */
+.content-section {
+    width: 75%;
+}
+
+/* Make iframes fill their containers */
+.header-section iframe,
+.menu-section iframe,
+.content-section iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/* Base styling for readability and consistent typography */
+body { 
+    font-family: 'Lexend', sans-serif;
+    margin: 20px;
+    background: white;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+.home-header { 
+    text-align: center;
+    background: linear-gradient(100deg, #bb9cdf, #a36edf);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.home-header h1 {
+    margin-top: 10px;
+    margin-bottom: 5px;   
+}
+
+.home-header p {
+    margin-top: 5px;      
+}
+
+.linear-header {
+    text-align: center;
+    background: linear-gradient(100deg, #ee87ac, #d95483);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.linear-header h1 {
+    margin-bottom: 5px;   
+    margin-top: 10px;
+}
+
+.linear-header p {
+    margin-top: 5px;     
+}
+
+.nonlinear-header {
+    text-align: center;
+    background: linear-gradient(100deg, #8fbaf3, #61a2f8);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nonlinear-header h1 {
+    margin-bottom: 5px;   
+    margin-top: 10px;
+}
+
+.nonlinear-header p {
+    margin-top: 5px;      
+}
+
+/* Main header typography */
+header h1 { 
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #1c2120;
+}
+
+
+header p {
+    font-size: 18px;
+    color: #1c2120;
+}
+
+
+/* Section Titles */
+h2 { 
+    color: #1c2120;
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+/* Header Table Styling */
+.header-table {
+    width: 100%;
+    display: flex;            
+    align-items: center;        
+    justify-content: flex-start;
+    gap: 15px;                 
+    padding: 10px 0;
+    padding-left: 30px;
+}
+
+/* Header Icon Styling */
+.header-icon {
+    width: 100px;                
+    height: auto;
+}
+
+/* Header H1 Styling */
+.header-table h1 {
+    font-size: 64px;
+    margin: 0;      
+    color: #1c2120;    
+}
+
+/* Data Structure Cards */
+.datastructure {
+    background-color: #f3effc;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: default;
+}
+
+.datastructure.linear {
+    background-color: #fff6f9;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: default;
+}
+
+.datastructure.nonlinear {
+    background-color: #eaf3ff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: default;
+}
+
+/* Base Menu Links*/
+.menu-link {
+    display: block;
+    background-color: #f4f4f6;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1c2120; 
+    transition: 
+        background-color 0.3s ease,
+        transform 0.2s ease,
+        color 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-link * {
+    cursor: pointer;
+}
+
+/* Menu Hover */
+.menu-link:hover {
+    background-color: #f0e6ff;
+    color: #6b3fcf;
+    transform: translateY(-3px) scale(1.02);
+}
+
+.menu-link.linear:hover {
+    background-color: #ffdce5;
+    color: #d95483;
+    transform: translateY(-3px) scale(1.02);
+}
+
+.menu-link.nonlinear:hover {
+    background-color: #cce0ff;
+    color: #3b6fd8;
+    transform: translateY(-3px) scale(1.02);
+}
+
+
+/* Data Structure Content Hover */
+.datastructure.linear:hover {
+    background-color: #ffdce5;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.datastructure.nonlinear:hover {
+    background-color: #cce0ff;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.datastructure:hover {
+    background-color: #f0e6ff;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+
+}
+
+
+/* Home */
+.datastructure:hover h3 {
+    color: #6b3fcf; /* purple */
+}
+
+/* Linear */
+.datastructure.linear:hover h3 {
+    color: #d95483; /* pink */
+}
+
+/* Nonlinear */
+.datastructure.nonlinear:hover h3 {
+    color: #3b6fd8; /* blue */
+}
+
+/* Links */
+a {
+    color: #1c2120;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Footer inside menu */
+.menu-footer {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 12px;
+    color: #555;
+    text-align: left;
+    line-height: 1.4;
+}
+
+/* Footer container */
+.menu-footer {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;              
+    padding: 10px 30px;       
+    box-sizing: border-box;   
+    font-size: 12px;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Footer title */
+.footer-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #1c2120;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 3px;
+}
+
+/* Footer names */
+.menu-footer p {
+    margin: 2px 0;
+    font-weight: 500;
+}
+
+.datastructure-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-size: 16px;
+    text-align: center;
+    background-color: #fafafa;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.datastructure-table th {
+    background-color: #bb9cdf;
+    color: white;
+    padding: 12px;
+    font-weight: 600;
+}
+
+.datastructure-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.datastructure-table tr:hover {
+    background-color: #f0e6ff;
+}
+
+.signedDeclaration {
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+/* ============================= */
+/* SEARCH BAR STYLING */
+/* ============================= */
+
+.small {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #000000;
+    box-shadow: 0 0 8px rgba(141, 137, 146, 0.3);
+}
+
+
+/* ============================= */
+/* BACK TO TOP BUTTON */
+/* ============================= */
+
+#toTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: none;
+    background: #585555;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#toTop:hover {
+    background: #020202;
+    transform: translateY(-3px);
+}

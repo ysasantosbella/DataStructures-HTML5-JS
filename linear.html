@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Data Structures</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="linear-header">
+        <h1>Linear Data Structures</h1>
+        <p>Elements are arranged in a sequence (e.g., Arrays, Stacks, Queues, Linked Lists).</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Examples of Linear Data Structures</h2>
+
+            <!-- search feature -->
+            <input id="searchInput" type="search" placeholder="Search: stack, queue, array..." />
+
+
+            <article class="datastructure linear" data-keywords="stack lifo push pop peek last in first out">
+                <h3>1. STACK (LIFO)</h3>
+                <ul>
+                    <li>Rule: Last-In, First-Out.</li>
+                    <li>Operations: Push (Add), Pop (Remove), Peek (View top).</li>
+                    <li>Search Speed: O(n)</li>
+                </ul>
+            </article>
+
+            <article class="datastructure linear" data-keywords="queue fifo enqueue dequeue front first in first out">
+                <h3>2. QUEUE (FIFO)</h3>
+                <ul>
+                    <li>Rule: First-In, First-Out.</li>
+                    <li>Operations: Enqueue (Add), Dequeue (Remove), Front (View first).</li>
+                    <li>Search Speed: O(n)</li>
+                </ul>
+            </article>
+
+            <article class="datastructure linear" data-keywords="linked list node pointer traverse add remove">
+                <h3>3. LINKED LIST</h3>
+                <ul>
+                    <li>Rule: Node-based. Each element points to the next.</li>
+                    <li>Operations: Add, Remove, Traverse.</li>
+                    <li>Search Speed: O(n)</li>
+                </ul>
+            </article>
+
+            <article class="datastructure linear" data-keywords="array index contiguous memory constant time access">
+                <h3>4. ARRAY</h3>
+                <ul>
+                    <li>Rule: Index-based. Data stored in contiguous memory.</li>
+                    <li>Search Speed: O(1) if index is known.</li>
+                </ul>
+            </article>
+
+            <article class="signedDeclaration" data-keywords="declaration certification academic honesty">
+                <h3>We certify that no AI tools were used in the design, coding, debugging, or writing of this project</h3>
+            </article>
+
+        </section>
+    </main>
+
+    <button id="toTop" type="button"> BACK TO TOP </button>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
