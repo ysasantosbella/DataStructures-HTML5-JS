@@ -523,4 +523,46 @@ body.dark-mode .dark-toggle:hover {
     transform: translateY(-2px);
 }
 
+/* Stack Simulator Styling */
+#stackSection {
+    text-align: center;
+    margin: 40px 0;
+}
+
+#stackSection input[type="number"] {
+    padding: 8px;
+    width: 100px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#stackSection button {
+    padding: 8px 15px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50; /* matches your theme if green */
+    color: white;
+    cursor: pointer;
+}
+
+#stackSection button:hover {
+    background-color: #45a049;
+}
+
+#stackOutput {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#stackCanvas {
+    display: block;
+    margin: 20px auto; /* center the canvas */
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+
 
