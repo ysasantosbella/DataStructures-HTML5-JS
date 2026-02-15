@@ -1,43 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* ============================= */
-/* MAIN INDEX LAYOUT (HTML5) */
-/* ============================= */
-
 html, body {
     height: 100%;
     margin: 0;
 }
 
-/* Vertical 35% / 65% split */
 .main-layout {
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* Header = 35% */
+/* Header */
 .header-section {
     height: 25vh;
 }
 
-/* Bottom = 65% */
+/* Bottom */
 .bottom-section {
     height: 65vh;
     display: flex;
 }
 
-/* Left = 25% */
+/* Left */
 .menu-section {
     width: 25%;
 }
 
-/* Right = 75% */
+/* Right */
 .content-section {
     width: 75%;
 }
 
-/* Make iframes fill their containers */
 .header-section iframe,
 .menu-section iframe,
 .content-section iframe {
@@ -46,8 +40,6 @@ html, body {
     border: none;
 }
 
-
-/* Base styling for readability and consistent typography */
 body { 
     font-family: 'Lexend', sans-serif;
     margin: 20px;
@@ -111,13 +103,12 @@ body {
     margin-top: 5px;      
 }
 
-/* Main header typography */
+
 header h1 { 
     font-size: 48px;
     margin-bottom: 10px;
     color: #1c2120;
 }
-
 
 header p {
     font-size: 18px;
@@ -145,7 +136,7 @@ h2 {
     padding-left: 30px;
 }
 
-/* Align the header control buttons to the right edge */
+/* to align the header control buttons to the right edge */
 .header-controls {
     margin-left: auto;
     margin-right: 30px;
@@ -239,7 +230,6 @@ h2 {
     transform: translateY(-3px) scale(1.02);
 }
 
-
 /* Data Structure Content Hover */
 .datastructure.linear:hover {
     background-color: #ffdce5;
@@ -257,20 +247,19 @@ h2 {
 
 }
 
-
 /* Home */
 .datastructure:hover h3 {
-    color: #6b3fcf; /* purple */
+    color: #6b3fcf; 
 }
 
 /* Linear */
 .datastructure.linear:hover h3 {
-    color: #d95483; /* pink */
+    color: #d95483; 
 }
 
 /* Nonlinear */
 .datastructure.nonlinear:hover h3 {
-    color: #3b6fd8; /* blue */
+    color: #3b6fd8; 
 }
 
 /* Links */
@@ -358,9 +347,8 @@ a {
     color: #555;
 }
 
-/* ============================= */
+
 /* SEARCH BAR STYLING */
-/* ============================= */
 
 .small {
     font-size: 14px;
@@ -386,9 +374,8 @@ a {
 }
 
 
-/* ============================= */
+
 /* BACK TO TOP BUTTON */
-/* ============================= */
 
 #toTop {
     position: fixed;
@@ -413,16 +400,15 @@ a {
 }
 
 
-/* ============================= */
-/* DARK MODE (PASTEL THEME) */
-/* ============================= */
+
+/* DARK MODE */
 
 body.dark-mode {
     background: #000000;
     color: #f3eaff;
 }
 
-/* Headers keep gradient but darker pastel */
+/* Headers */
 body.dark-mode .home-header {
     background: #5e3f8f;
 }
@@ -444,15 +430,15 @@ body.dark-mode h2 {
 
 /* Cards */
 body.dark-mode .datastructure {
-    background-color: #2a2238; /* deep pastel purple */
+    background-color: #2a2238; 
 }
 
 body.dark-mode .datastructure.linear {
-    background-color: #502b3d; /* deep pastel pink */
+    background-color: #502b3d; 
 }
 
 body.dark-mode .datastructure.nonlinear {
-    background-color: #1f2d47; /* deep pastel blue */
+    background-color: #1f2d47; 
 }
 
 /* Menu */
@@ -505,11 +491,10 @@ body.dark-mode #toTop:hover {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
-    padding-right: 5px;   /* smaller spacing */
+    padding-right: 5px; 
 }
 
 
-/* Remove ALL margin-left from buttons */
 .dark-toggle {
     border-radius: 40px;
     padding: 8px 14px;
