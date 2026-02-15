@@ -142,6 +142,88 @@
     });
   }
 
+  /* ===== STACK SIMULATOR ===== */
+
+  // Stack array
+  let stack = [];
+
+  // Get DOM elements for stack (if they exist on this page)
+  const stackInput = document.getElementById("stackInput");
+  const pushBtn = document.getElementById("pushBtn");
+  const popBtn = document.getElementById("popBtn");
+  const stackOutput = document.getElementById("stackOutput");
+  const canvas = document.getElementById("stackCanvas");
+  const ctx = canvas ? canvas.getContext("2d") : null;
+
+  // Set text style for canvas
+  if (ctx) {
+    ctx.font = "16px Arial";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+  }
+
+  // Draw stack on canvas
+  function drawStack() {
+    if (!ctx) return;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const boxWidth = 200;
+    const boxHeight = 40;
+    const x = 50; // x-position of boxes
+
+    for (let i = 0; i < stack.length; i++) {
+      const y = canvas.height - (i + 1) * boxHeight;
+
+      // Draw rectangle
+      ctx.strokeRect(x, y, boxWidth, boxHeight);
+
+      // Draw number inside rectangle
+      ctx.fillText(stack[i], x + boxWidth / 2, y + boxHeight / 2);
+    }
+  }
+
+  // Update stack text and redraw canvas
+  function updateStack() {
+    if (!stackOutput) return;
+
+    if (stack.length === 0) {
+      stackOutput.textContent = "Stack is empty.";
+    } else {
+      stackOutput.innerHTML =
+        "Stack: " + stack.join(", ") + "<br>Size: " + stack.length;
+    }
+
+    drawStack();
+  }
+
+  // Push button event
+  if (pushBtn) {
+    pushBtn.addEventListener("click", () => {
+      if (!stackInput) return;
+      const value = stackInput.value;
+      if (value === "") return alert("Enter a number to push!");
+
+      stack.push(value);
+      stackInput.value = "";
+      updateStack();
+    });
+  }
+
+  // Pop button event
+  if (popBtn) {
+    popBtn.addEventListener("click", () => {
+      if (stack.length === 0) return alert("Stack is already empty!");
+
+      stack.pop();
+      updateStack();
+    });
+  }
+
+  // Initial draw
+  updateStack();
+
+  /* ===== INIT FEATURES ON DOM LOAD ===== */
   document.addEventListener("DOMContentLoaded", function () {
     searchFeature();
     scrollToTopFeature();
